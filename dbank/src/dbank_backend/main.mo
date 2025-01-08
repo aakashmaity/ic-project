@@ -3,12 +3,12 @@ import Time "mo:base/Time";
 import Float "mo:base/Float";
 
 actor DBank{
-  stable var currentVal: Float = 100;
-  stable var startTime = Time.now();
+  var currentVal: Float = 100;
+  var startTime = Time.now();
   Debug.print(debug_show(startTime));
 
   public func greet(){
-    Debug.print("DBank Welcomes you");
+    Debug.print(" DBank Welcomes you");
   };
 
   public func deposit(amount: Float){
@@ -33,7 +33,7 @@ actor DBank{
   public func compoundInterest(){
     let currentTime = Time.now();
     let timeElapsedNS = currentTime - startTime; // in NanoSeconds
-    let timeElapsedS = timeElapsedNS / 1000000000; // in seconds
+    let timeElapsedS = timeElapsedNS / (60*1000000000); // in seconds
     // Debug.print(debug_show(timeElapsedS));
 
     currentVal := currentVal * ( 1.01 ** Float.fromInt(timeElapsedS));
