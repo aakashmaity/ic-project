@@ -33,7 +33,7 @@ actor DBank{
   public func compoundInterest(){
     let currentTime = Time.now();
     let timeElapsedNS = currentTime - startTime; // in NanoSeconds
-    let timeElapsedS = timeElapsedNS / (60*1000000000); // in seconds
+    let timeElapsedS = timeElapsedNS / (1000000000); // in seconds
     // Debug.print(debug_show(timeElapsedS));
 
     currentVal := currentVal * ( 1.01 ** Float.fromInt(timeElapsedS));
